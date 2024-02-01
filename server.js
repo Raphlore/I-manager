@@ -10,10 +10,10 @@ const jwt = require('jsonwebtoken')
 const JWT_SECRET = 'ajshdjjdhfjjshdjjd@#$%&*! fjjshdjjhfjfhhdj'
 //const { ConnectionClosedEvent } = require('mongodb')
 
-mongoose.connect('mongodb://localhost:27017/login-app-db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect('mongodb://localhost:27017/login-app-db')
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true
+
 
 
 
