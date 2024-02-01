@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon"
+    "server": "PATH=/opt/render/project/src/server/node_modules/.bin:$PATH && npm start"
   },
   "author": "Raphlore",
   "license": "ISC",
