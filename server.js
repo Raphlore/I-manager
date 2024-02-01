@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken')
 const JWT_SECRET = 'ajshdjjdhfjjshdjjd@#$%&*! fjjshdjjhfjfhhdj'
 //const { ConnectionClosedEvent } = require('mongodb')
 
-mongoose.connect('mongodb://localhost:27017/login-app-db')
+mongoose.connect('mongodb+srv://raph123:raph123@cluster0.rgoad5k.mongodb.net/authentication?retryWrites=true&w=majority')
   // useNewUrlParser: true,
   // useUnifiedTopology: true
 
