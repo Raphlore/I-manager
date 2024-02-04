@@ -6,14 +6,18 @@ const mongoose = require('mongoose')
 const User = require('./model/user')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
+const uploadRoute = require('./routeUpload')
 
 const JWT_SECRET = 'ajshdjjdhfjjshdjjd@#$%&*! fjjshdjjhfjfhhdj'
 //const { ConnectionClosedEvent } = require('mongodb')
 
-mongoose.connect('mongodb+srv://raph123:raph123@cluster0.rgoad5k.mongodb.net/authentication?retryWrites=true&w=majority')
+// mongoose.connect('mongodb+srv://raph123:raph123@cluster0.rgoad5k.mongodb.net/authentication?retryWrites=true&w=majority')
   // useNewUrlParser: true,
   // useUnifiedTopology: true
 
+  mongoose.connect(process.env.MONGO_URL)
+console.log('Connected to MongoDB')
 
 
 
@@ -21,6 +25,9 @@ const app = express()
 app.use(cors());
 app.use('/', express.static(path.join(__dirname, 'static')))
 app.use(bodyParser.json())
+
+app.use('/api/users', uploadRoute);
+
 
 app.post('/api/change-password', async (req, res) => {
   const { token, newPassword: plainTextPassword } = req.body
